@@ -2,6 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import duration from './duration.module.css';
+import {useSelector} from 'react-redux';
 
 export default function Duration() {
 
@@ -68,10 +69,14 @@ export default function Duration() {
       active:false
     }
   ]
-  
+  const state= useSelector((state)=>{return state
+  })
+console.log(state);
+
     return (
         <div className={duration.page}>
           <p className={duration.dur}>Duration</p>
+          <p style={{'color':'black'}} >Switch it up {state}</p>
          <Row className={duration.row}>
            {durations.map((number)=>{
              return(

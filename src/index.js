@@ -4,32 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
 
 
+import store from './redux/index';
 
-
-
-//Action
-
-const actions =(state=0, action)=>{
-    switch (action.type) {
-        case "INCREMENT":
-            state=state+1
-            break;
-
-            case "DECREMENT":
-            state=state-1
-                break;
-
-        default:
-            break;
-    }
-console.log(state)
-return state
-}
-
-const store = createStore(actions)
 
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
